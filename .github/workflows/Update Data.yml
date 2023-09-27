@@ -1,0 +1,28 @@
+name: Update Data
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Schedule to run daily
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Fetch Data
+      run: |
+        # Use a script or a tool to fetch data from the API and save it as data.json
+        # For example, using curl:
+        curl -o data.json "https://newsapi.org/v2/everything?q="
+
+    - name: Commit and Push Data
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add data.json
+        git commit -m "Update data.json"
+        git push
+
