@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="dark-mode">
+    <nav>
+        <div class="main-nav container flex">
+          <a onclick="reload()" href="#" class="company-logo">
+            <img src="newslogo.jpg" alt="company-logo">
+          </a>
+          <div class="nav-links">
+            <ul class="flex">
+              <li class="hover-links nav-items" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
+              <li class="hover-links nav-items" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+              <li class="hover-links nav-items" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+            </ul>
+          </div>
+
+          <button id="dark-mode-toggle" class="dark-button flex">
+            <span>Dark Mode</span>
+          </button>
+
+           <div class="search-bar flex">
+            <input id="search-text" type="text" class="news-input" placeholder="search Technology">
+            <button id="search-button" class="search-button">Search</button>
+          </div>
+        </div>
+      </nav>
+    
+      
+      <main>
+        <div class="cards-container container flex" id="cards-container">
+         
+        </div>
+      </main>
+    
+    
+      <template id="template-news-card">
+         <div class="card">
+            <div class="card-header">
+              <img id="news-img" src="https://via.placeholder.com/400X200" alt="newsphoto">
+            </div>
+            <div class="card-content">
+              <h3 id="news-title">This is title</h3>
+              <h6 id="news-source" class="news-source">End Gadget 26/08/2023</h6>
+              <p class="news-desc" id="news-desc">Dummy</p>
+            </div>
+          </div>
+      </template>
+      <script src="script.js"></script>
+</body>
+</html>
